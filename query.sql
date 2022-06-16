@@ -1,19 +1,30 @@
---sort by highest public rating to least
-SELECT*FROM book_profile
+--sort by highest public rating to least 
+SELECT book_profile.book_title, author_profile.author_name, genre_profile.genre_name, book_profile.public_rating 
+FROM book_profile
+JOIN author_profile ON book_profile.author_id = author_profile.id
+JOIN genre_profile ON book_profile.genre_id = genre_profile.id
 ORDER BY public_rating DESC;
 
 --filter books only written by James Dashner 
-SELECT book_title, author, genre, public_rating FROM book_profile
-WHERE author = 'James Dashner';
+SELECT book_title, author_name, genre_name, public_rating 
+FROM book_profile
+JOIN author_profile ON book_profile.author_id = author_profile.id
+JOIN genre_profile ON book_profile.genre_id = genre_profile.id
+WHERE author_profile.id = 1;
+
 
 --average rating of books by James Dashner
 SELECT AVG(public_rating)
 FROM book_profile
-WHERE author = 'James Dashner';
+JOIN author_profile ON book_profile.author_id = author_profile.id
+WHERE author_id = 1;
 
 --filter books that has a genre of mystery 
-SELECT book_title, author, genre, public_rating FROM book_profile
-WHERE genre = 'Mystery';
+SELECT book_profile.book_title, author_profile.author_name, genre_profile.genre_name, book_profile.public_rating 
+FROM book_profile
+JOIN author_profile ON book_profile.author_id = author_profile.id
+JOIN genre_profile ON book_profile.genre_id = genre_profile.id
+WHERE genre_name = 'Mystery';
 
 --if I read the book or not
 SELECT book_profile.book_title, reading_profile.status
