@@ -26,6 +26,14 @@ JOIN author_profile ON book_profile.author_id = author_profile.id
 JOIN genre_profile ON book_profile.genre_id = genre_profile.id
 WHERE genre_name = 'Mystery';
 
+--finding average of books with a genre of classics
+SELECT AVG(public_rating)
+from book_profile
+JOIN author_profile ON book_profile.author_id = author_profile.id
+JOIN genre_profile ON book_profile.genre_id = genre_profile.id
+WHERE genre_name = 'Classics'
+
+
 --if I read the book or not
 SELECT book_profile.book_title, reading_profile.status
 FROM book_profile
