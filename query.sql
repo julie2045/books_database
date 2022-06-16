@@ -41,5 +41,5 @@ WHERE streaming_platform = 'Disney+' AND duration_min > 130;
 SELECT book_profile.book_title, library_branches.branch_name 
 FROM library_availability
 JOIN book_profile ON library_availability.book_id = book_profile.id 
-JOIN library_branches ON library_availability.branch_id = library_branches.id 
+RIGHT JOIN library_branches ON library_availability.branch_id = library_branches.id 
 WHERE branch_name = 'Main Branch' or branch_name = 'Westminster Square Branch'

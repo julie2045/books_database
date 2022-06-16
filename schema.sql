@@ -47,8 +47,6 @@ CREATE TABLE library_availability
 
  );
   
- 
-
 INSERT INTO author_profile 
 (author_name)
 VALUES 
@@ -75,8 +73,6 @@ VALUES
 ('Mystery'),
 ('Romance');
  
- 
- 
 INSERT INTO book_profile 
 (book_title, author_id, genre_id, public_rating) 
 VALUES 
@@ -92,8 +88,6 @@ VALUES
 ('One of Us is Lying', 8, 8, 4.01),
 ('Dune', 9, 2, 4.25);
 
-
-
 INSERT INTO reading_profile
 (book_id, status)
 VALUES
@@ -108,7 +102,6 @@ VALUES
 (9, 'no'),
 (10, 'yes'),
 (11, 'no');
-
 
 INSERT INTO movie_adaptation
 (book_id, duration_min, streaming_platform)
