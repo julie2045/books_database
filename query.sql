@@ -43,6 +43,17 @@ SELECT book_profile.book_title, reading_profile.status
 FROM book_profile
 JOIN reading_profile ON book_profile.id = reading_profile.book_id;
 
+--updates the reading status. for example changed Dune book from a no to a yes 
+UPDATE reading_profile
+SET status = 'yes'
+WHERE book_id = 11;
+
+SELECT book_profile.book_title, reading_profile.status
+FROM book_profile
+JOIN reading_profile ON book_profile.id = reading_profile.book_id;
+WHERE book_profile.id = 11;
+
+
 --see if a book has a movie where it is on Disney+ and the duration is greater than 130 minutes
 --helpful if a person want to watch the movie version of the book
 SELECT book_profile.book_title, movie_adaptation.duration_min, movie_adaptation.streaming_platform
