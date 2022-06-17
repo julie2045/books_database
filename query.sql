@@ -50,7 +50,7 @@ WHERE book_id = 11;
 
 SELECT book_profile.book_title, reading_profile.status
 FROM book_profile
-JOIN reading_profile ON book_profile.id = reading_profile.book_id;
+JOIN reading_profile ON book_profile.id = reading_profile.book_id
 WHERE book_profile.id = 11;
 
 
