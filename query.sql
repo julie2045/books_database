@@ -26,13 +26,12 @@ JOIN author_profile ON book_profile.author_id = author_profile.id
 JOIN genre_profile ON book_profile.genre_id = genre_profile.id
 WHERE genre_name = 'Mystery';
 
---finding average of books with a genre of classics
-SELECT AVG(public_rating)
-from book_profile
-JOIN author_profile ON book_profile.author_id = author_profile.id
+--gets the average rating in each genre
+SELECT genre_name, AVG(public_rating)
+FROM book_profile
 JOIN genre_profile ON book_profile.genre_id = genre_profile.id
-WHERE genre_name = 'Classics';
-
+GROUP BY genre_name
+ORDER BY AVG(public_rating) ASC;
 
 --if I read the book or not
 SELECT book_profile.book_title, reading_profile.status
@@ -50,4 +49,4 @@ SELECT book_profile.book_title, library_branches.branch_name
 FROM library_availability
 JOIN book_profile ON library_availability.book_id = book_profile.id 
 RIGHT JOIN library_branches ON library_availability.branch_id = library_branches.id 
-WHERE branch_name = 'Main Branch' or branch_name = 'Westminster Square Branch'
+WHERE branch_name = 'Main Branch' or branch_name = 'Westminster Square Branch';
