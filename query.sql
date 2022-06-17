@@ -31,7 +31,7 @@ SELECT AVG(public_rating)
 from book_profile
 JOIN author_profile ON book_profile.author_id = author_profile.id
 JOIN genre_profile ON book_profile.genre_id = genre_profile.id
-WHERE genre_name = 'Classics'
+WHERE genre_name = 'Classics';
 
 
 --if I read the book or not
