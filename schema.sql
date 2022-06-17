@@ -58,7 +58,8 @@ VALUES
 ('Delia Owens'),
 ('Jane Austen'),
 ('Karen M. McManus'),
-('Frank Herbert');
+('Frank Herbert'),
+('Raina Telgemeier');
  
 INSERT INTO genre_profile
 (genre_name)
@@ -86,7 +87,8 @@ VALUES
 ('Where the Crawdads Sing', 6, 8, 4.45),
 ('Pride & Prejudice', 7, 2, 4.28),
 ('One of Us is Lying', 8, 8, 4.01),
-('Dune', 9, 2, 4.25);
+('Dune', 9, 2, 4.25),
+('Smile', 10, 5, 4.35);
 
 INSERT INTO reading_profile
 (book_id, status)
@@ -101,7 +103,8 @@ VALUES
 (8, 'no'),
 (9, 'no'),
 (10, 'yes'),
-(11, 'no');
+(11, 'no'),
+(12, 'yes');
 
 INSERT INTO movie_adaptation
 (book_id, duration_min, streaming_platform)
@@ -147,4 +150,5 @@ VALUES
 (11, 2),
 (11, 3),
 (11, 5),
-(11, 6);
+(11, 6),
+(12, 2);
